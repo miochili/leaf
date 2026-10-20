@@ -4,7 +4,7 @@ Open a PDF or Word file, edit it like any document, and save it as Word or PDF. 
 
 ## Download
 
-Get **Leaf-Setup-1.0.0.exe** from the [Releases](../../releases) page and run it. It installs for your user account, so you don't need administrator rights.
+Open the [download](download) folder, save all five files into one folder, and double-click **Join Leaf Setup.bat**. It rebuilds the installer and starts it. It installs for your user account, so you don't need administrator rights.
 
 Windows may show "Windows protected your PC" because the app isn't code-signed. Click **More info**, then **Run anyway**.
 
