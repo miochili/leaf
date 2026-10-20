@@ -1,0 +1,45 @@
+appId: app.leaf.editor
+productName: Leaf
+copyright: Leaf
+asar: false
+files:
+  - main/**
+  - renderer/**
+  - resources/**
+  - assets/icon-512.png
+  - package.json
+  - "!node_modules/tesseract.js-core/*.wasm.js"
+  - "!node_modules/**/{README,CHANGELOG,HISTORY}*"
+  - "!node_modules/**/*.{md,map,ts}"
+electronLanguages: [en-US, en-GB, de, fr, it]
+directories:
+  output: release
+  buildResources: build
+afterPack: build/afterPack.cjs
+win:
+  icon: build/icon.ico
+  signAndEditExecutable: false
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: zip
+      arch: [x64]
+  artifactName: Leaf-${version}-${arch}-portable.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Leaf
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  installerSidebar: build/sidebar.bmp
+  uninstallerSidebar: build/sidebar.bmp
+  include: build/installer.nsh
+  artifactName: Leaf-Setup-${version}.exe
+  uninstallDisplayName: Leaf
+linux:
+  target: [dir]
+  icon: assets/icon-512.png
+  category: Office
